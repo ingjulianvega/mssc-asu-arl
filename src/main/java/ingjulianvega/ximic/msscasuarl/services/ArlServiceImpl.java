@@ -30,7 +30,7 @@ public class ArlServiceImpl implements ArlService {
         log.debug("get()...");
         return ArlList
                 .builder()
-                .epsDto(arlMapper.arlEntityListToArlDtoList(arlRepository.findAll()))
+                .epsDto(arlMapper.arlEntityListToArlDtoList(arlRepository.findAllByOrderByName()))
                 .build();
     }
 

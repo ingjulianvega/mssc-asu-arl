@@ -1,6 +1,6 @@
 [![CircleCI](https://circleci.com/gh/ingjulianvega/mssc-asu-arl.svg?style=svg)](https://circleci.com/gh/ingjulianvega/mssc-asu-arl)
 
-# ASU EPS management microservice
+# ASU ARL management microservice
 
 ### BOM
 
