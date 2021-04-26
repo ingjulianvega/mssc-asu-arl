@@ -25,6 +25,7 @@ public class ArlLoader implements CommandLineRunner {
         arlRepository.saveAll(Arrays.asList(
                 ArlEntity.builder().name("SURA").build(),
                 ArlEntity.builder().name("POSITIVA").build(),
+                ArlEntity.builder().name("NINGUNA").build(),
                 ArlEntity.builder().name("COLPATRIA").build()
         ));
     }
