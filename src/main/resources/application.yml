@@ -9,6 +9,8 @@ contact-url: https://twitter.com/ingjulianvega
 spring:
   application:
     name: @artifactId@
+  profiles:
+    active: local-discovery
   h2:
     console:
       enabled: true
