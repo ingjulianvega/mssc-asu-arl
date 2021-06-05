@@ -24,16 +24,16 @@ spring:
       config: classpath:ehcache.xml
   #Zipkin
   zipkin:
-    enabled: false
+    baseUrl: http://localhost:9411/
 #General configuration
 server:
   port: 8084
   servlet:
     context-path: /asu/v1/arl
 #Logging
-#logging:
-#  level:
-#    root: DEBUG
+logging:
+  level:
+    root: DEBUG
 #Exceptions
 arl:
   success: The operation was successful.
