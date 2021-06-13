@@ -19,8 +19,8 @@ public class ArlController implements ArlI {
     private final ArlService arlService;
 
     @Override
-    public ResponseEntity<ArlList> get() {
-        return new ResponseEntity<>(arlService.get(), HttpStatus.OK);
+    public ResponseEntity<ArlList> get(Boolean usingCache) {
+        return new ResponseEntity<>(arlService.get(usingCache), HttpStatus.OK);
     }
 
     @Override

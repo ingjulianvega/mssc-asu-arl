@@ -7,7 +7,7 @@ import ingjulianvega.ximic.msscasuarl.web.model.ArlList;
 import java.util.UUID;
 
 public interface ArlService {
-    ArlList get();
+    ArlList get(Boolean usingCache);
 
     ArlDto getById(UUID id);
 

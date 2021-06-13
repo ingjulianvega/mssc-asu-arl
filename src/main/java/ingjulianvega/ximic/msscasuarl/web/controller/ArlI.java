@@ -33,7 +33,7 @@ public interface ArlI {
     @RequestMapping(value = "/",
             produces = {"application/json"},
             method = RequestMethod.GET)
-    ResponseEntity<ArlList> get();
+    ResponseEntity<ArlList> get(@Parameter(in = ParameterIn.QUERY, description = "The using of cache", required = true, schema = @Schema()) Boolean usingCache);
 
 
     @Operation(summary = "Endpoint to get the information of an ARL given the id", description = "Returns an ARL", tags = {"ARL"})

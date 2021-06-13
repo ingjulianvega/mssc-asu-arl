@@ -24,9 +24,9 @@ public class ArlServiceImpl implements ArlService {
     private final ArlRepository arlRepository;
     private final ArlMapper arlMapper;
 
-    @Cacheable(cacheNames = "arlListCache")
+    @Cacheable(cacheNames = "arlListCache", condition = "#usingCache == false")
     @Override
-    public ArlList get() {
+    public ArlList get(Boolean usingCache) {
         log.debug("get()...");
         return ArlList
                 .builder()
