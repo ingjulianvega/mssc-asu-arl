@@ -37,7 +37,7 @@ logging:
 #Exceptions
 arl:
   success: The operation was successful.
-  prefix: 'API-ARL:'
+  prefix: @artifactId@
   error:
     general: There was an unexpected error. Please try again.
 #Eureka
