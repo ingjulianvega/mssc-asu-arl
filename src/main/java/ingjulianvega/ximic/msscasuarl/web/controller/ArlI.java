@@ -1,6 +1,6 @@
 package ingjulianvega.ximic.msscasuarl.web.controller;
 
-import ingjulianvega.ximic.msscasuarl.exception.ArlException;
+import ingjulianvega.ximic.msscasuarl.web.model.ApiError;
 import ingjulianvega.ximic.msscasuarl.web.model.Arl;
 import ingjulianvega.ximic.msscasuarl.web.model.ArlDto;
 import ingjulianvega.ximic.msscasuarl.web.model.ArlList;
@@ -27,9 +27,9 @@ public interface ArlI {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "The operation was successful.", content = @Content(schema = @Schema(implementation = ArlList.class))),
 
-            @ApiResponse(responseCode = "400", description = "400 - business error", content = @Content(schema = @Schema(implementation = ArlException.class))),
+            @ApiResponse(responseCode = "400", description = "400 - business error", content = @Content(schema = @Schema(implementation = ApiError.class))),
 
-            @ApiResponse(responseCode = "500", description = "500 - server error", content = @Content(schema = @Schema(implementation = ArlException.class)))})
+            @ApiResponse(responseCode = "500", description = "500 - server error", content = @Content(schema = @Schema(implementation = ApiError.class)))})
     @RequestMapping(value = "/",
             produces = {"application/json"},
             method = RequestMethod.GET)
@@ -40,9 +40,9 @@ public interface ArlI {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "The operation was successful.", content = @Content(schema = @Schema(implementation = ArlDto.class))),
 
-            @ApiResponse(responseCode = "400", description = "400 - business error", content = @Content(schema = @Schema(implementation = ArlException.class))),
+            @ApiResponse(responseCode = "400", description = "400 - business error", content = @Content(schema = @Schema(implementation = ApiError.class))),
 
-            @ApiResponse(responseCode = "500", description = "500 - server error", content = @Content(schema = @Schema(implementation = ArlException.class)))})
+            @ApiResponse(responseCode = "500", description = "500 - server error", content = @Content(schema = @Schema(implementation = ApiError.class)))})
     @RequestMapping(value = "/{id}",
             produces = {"application/json"},
             method = RequestMethod.GET)
@@ -52,9 +52,9 @@ public interface ArlI {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "The operation was successful."),
 
-            @ApiResponse(responseCode = "400", description = "400 - business error", content = @Content(schema = @Schema(implementation = ArlException.class))),
+            @ApiResponse(responseCode = "400", description = "400 - business error", content = @Content(schema = @Schema(implementation = ApiError.class))),
 
-            @ApiResponse(responseCode = "500", description = "500 - server error", content = @Content(schema = @Schema(implementation = ArlException.class)))})
+            @ApiResponse(responseCode = "500", description = "500 - server error", content = @Content(schema = @Schema(implementation = ApiError.class)))})
     @RequestMapping(value = "/",
             produces = {"application/json"},
             consumes = {"application/json"},
@@ -66,9 +66,9 @@ public interface ArlI {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "The operation was successful."),
 
-            @ApiResponse(responseCode = "400", description = "400 - business error", content = @Content(schema = @Schema(implementation = ArlException.class))),
+            @ApiResponse(responseCode = "400", description = "400 - business error", content = @Content(schema = @Schema(implementation = ApiError.class))),
 
-            @ApiResponse(responseCode = "500", description = "500 - error de server, it'll show a generic user message", content = @Content(schema = @Schema(implementation = ArlException.class)))})
+            @ApiResponse(responseCode = "500", description = "500 - error de server, it'll show a generic user message", content = @Content(schema = @Schema(implementation = ApiError.class)))})
     @RequestMapping(value = "/{id}",
             produces = {"application/json"},
             consumes = {"application/json"},
@@ -81,9 +81,9 @@ public interface ArlI {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "The operation was successful."),
 
-            @ApiResponse(responseCode = "400", description = "400 - business error", content = @Content(schema = @Schema(implementation = ArlException.class))),
+            @ApiResponse(responseCode = "400", description = "400 - business error", content = @Content(schema = @Schema(implementation = ApiError.class))),
 
-            @ApiResponse(responseCode = "500", description = "500 - error de server, it'll show a generic user message", content = @Content(schema = @Schema(implementation = ArlException.class)))})
+            @ApiResponse(responseCode = "500", description = "500 - error de server, it'll show a generic user message", content = @Content(schema = @Schema(implementation = ApiError.class)))})
     @RequestMapping(value = "/{id}",
             produces = {"application/json"},
             method = RequestMethod.DELETE)

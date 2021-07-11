@@ -12,6 +12,7 @@ import ingjulianvega.ximic.msscasuarl.web.model.ArlList;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -39,7 +40,14 @@ public class ArlServiceImpl implements ArlService {
     public ArlDto getById(UUID id) {
         log.debug("getById()...");
         return arlMapper.arlEntityToArlDto(
-                arlRepository.findById(id).orElseThrow(() -> new ArlException(ErrorCodeMessages.ARL_NOT_FOUND, "")));
+                arlRepository.findById(id).orElseThrow(() -> ArlException
+                        .builder()
+                        .httpStatus(HttpStatus.BAD_REQUEST)
+                        .apiCode(ErrorCodeMessages.ARL_NOT_FOUND_API_CODE)
+                        .error(ErrorCodeMessages.ARL_NOT_FOUND_ERROR)
+                        .message(ErrorCodeMessages.ARL_NOT_FOUND_MESSAGE)
+                        .solution(ErrorCodeMessages.ARL_NOT_FOUND_SOLUTION)
+                        .build()));
     }
 
     @Override
@@ -57,7 +65,14 @@ public class ArlServiceImpl implements ArlService {
     @Override
     public void updateById(UUID id, Arl arl) {
         log.debug("updateById...");
-        ArlEntity arlEntity = arlRepository.findById(id).orElseThrow(() -> new ArlException(ErrorCodeMessages.ARL_NOT_FOUND, ""));
+        ArlEntity arlEntity = arlRepository.findById(id).orElseThrow(() -> ArlException
+                .builder()
+                .httpStatus(HttpStatus.BAD_REQUEST)
+                .apiCode(ErrorCodeMessages.ARL_NOT_FOUND_API_CODE)
+                .error(ErrorCodeMessages.ARL_NOT_FOUND_ERROR)
+                .message(ErrorCodeMessages.ARL_NOT_FOUND_MESSAGE)
+                .solution(ErrorCodeMessages.ARL_NOT_FOUND_SOLUTION)
+                .build());
         arlEntity.setName(arl.getName());
 
         arlRepository.save(arlEntity);

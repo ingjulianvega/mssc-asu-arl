@@ -5,12 +5,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Null;
 import java.io.Serializable;
 import java.util.UUID;
 
-import static ingjulianvega.ximic.msscasuarl.configuration.ErrorCodeMessages.VALIDATION_NAME_NULL;
 
 @Data
 @NoArgsConstructor
@@ -21,7 +19,6 @@ public class ArlDto implements Serializable {
 
     @Null
     private UUID id;
-    @NotBlank(message = VALIDATION_NAME_NULL)
     private String name;
 
 }

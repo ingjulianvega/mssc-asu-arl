@@ -31,9 +31,9 @@ server:
   servlet:
     context-path: /asu/v1/arl
 #Logging
-logging:
-  level:
-    root: DEBUG
+#logging:
+#  level:
+#    root: DEBUG
 #Exceptions
 arl:
   success: The operation was successful.
