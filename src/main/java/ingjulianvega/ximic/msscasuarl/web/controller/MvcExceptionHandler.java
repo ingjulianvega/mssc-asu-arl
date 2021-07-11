@@ -1,5 +1,6 @@
 package ingjulianvega.ximic.msscasuarl.web.controller;
 
+import ingjulianvega.ximic.msscasuarl.configuration.ArlParameters;
 import ingjulianvega.ximic.msscasuarl.configuration.ErrorCodeMessages;
 import ingjulianvega.ximic.msscasuarl.exception.ArlException;
 import ingjulianvega.ximic.msscasuarl.web.model.ApiError;
@@ -19,13 +20,18 @@ import java.util.Map;
 
 @ControllerAdvice
 public class MvcExceptionHandler extends ResponseEntityExceptionHandler {
+    private final ArlParameters arlParameters;
+
+    public MvcExceptionHandler(ArlParameters arlParameters) {
+        this.arlParameters = arlParameters;
+    }
 
     @ExceptionHandler(ArlException.class)
     public ResponseEntity<ApiError> validationErrorHandler(ArlException pe) {
         ApiError apiError = ApiError
                 .builder()
                 .timestamp(LocalDateTime.now())
-                .api("mssc-asu-arl")
+                .api(arlParameters.getApi())
                 .apiCode(pe.getApiCode())
                 .error(pe.getError())
                 .message(pe.getMessage())
@@ -48,7 +54,7 @@ public class MvcExceptionHandler extends ResponseEntityExceptionHandler {
         ApiError apiError = ApiError
                 .builder()
                 .timestamp(LocalDateTime.now())
-                .api("mssc-asu-arl")
+                .api(arlParameters.getApi())
                 .apiCode(ErrorCodeMessages.ARGUMENT_NOT_VALID_API_CODE)
                 .error(ErrorCodeMessages.ARGUMENT_NOT_VALID_ERROR)
                 .message(errors.toString())

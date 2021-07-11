@@ -11,14 +11,6 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "arl")
 public class ArlParameters {
 
-    private String success;
-    private String prefix;
-    private Error error;
-    private String channelId;
+    private String api;
 
-    @Getter
-    @Setter
-    public static class Error {
-        private String general;
-    }
 }

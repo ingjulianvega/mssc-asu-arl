@@ -36,10 +36,7 @@ server:
 #    root: DEBUG
 #Exceptions
 arl:
-  success: The operation was successful.
-  prefix: @artifactId@
-  error:
-    general: There was an unexpected error. Please try again.
+  api: @artifactId@
 #Eureka
 eureka:
   client:
