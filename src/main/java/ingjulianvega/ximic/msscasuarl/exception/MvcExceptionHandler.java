@@ -1,4 +1,4 @@
-package ingjulianvega.ximic.msscasuarl.web.controller;
+package ingjulianvega.ximic.msscasuarl.exception;
 
 import ingjulianvega.ximic.msscasuarl.configuration.ArlParameters;
 import ingjulianvega.ximic.msscasuarl.configuration.ErrorCodeMessages;
